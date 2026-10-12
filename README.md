@@ -39,7 +39,7 @@ pi writes each session as plain `.jsonl` — great for machines, hard for humans
 
 ```bash
 curl -Lo PiSessionVisualizer.AppImage \
-  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi%20Session%20Visualizer-0.1.0.AppImage
+  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0.AppImage
 ./PiSessionVisualizer.AppImage
 ```
 
@@ -143,7 +143,7 @@ pi 把每个会话写成纯文本 `.jsonl`——对机器友好，对人不够�
 
 ```bash
 curl -Lo PiSessionVisualizer.AppImage \
-  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi%20Session%20Visualizer-0.1.0.AppImage
+  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0.AppImage
 ./PiSessionVisualizer.AppImage
 ```
 
