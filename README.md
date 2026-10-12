@@ -1,5 +1,7 @@
 # Pi Session Visualizer
 
+🌐 **English** | [中文](README.zh-CN.md)
+
 **Open every pi session as a timeline, a graph, and a set of insights — without moving a single byte of your data.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -35,13 +37,45 @@ pi writes each session as plain `.jsonl` — great for machines, hard for humans
 
 ## 🚀 Quick Start
 
+Prebuilt installers for all three platforms ship with every [release](https://github.com/fenlyin0420/pi-session-visualizer/releases/latest):
+
+| Platform | Asset |
+| --- | --- |
+| Linux | `Pi.Session.Visualizer-0.1.0.AppImage` |
+| macOS (universal — Intel + Apple Silicon) | `Pi.Session.Visualizer-0.1.0-universal.dmg` |
+| Windows | `Pi.Session.Visualizer.Setup.0.1.0.exe` |
+
 ### Linux (AppImage)
 
 ```bash
 curl -Lo PiSessionVisualizer.AppImage \
   https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0.AppImage
+chmod +x PiSessionVisualizer.AppImage
 ./PiSessionVisualizer.AppImage
 ```
+
+### macOS (dmg)
+
+```bash
+curl -Lo PiSessionVisualizer.dmg \
+  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0-universal.dmg
+open PiSessionVisualizer.dmg
+```
+
+Drag **Pi Session Visualizer** into `/Applications`. The build is unsigned, so the first launch needs right-click → **Open**, or:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/Pi Session Visualizer.app"
+```
+
+### Windows (NSIS)
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer.Setup.0.1.0.exe -OutFile PiSessionVisualizer-Setup.exe
+.\PiSessionVisualizer-Setup.exe
+```
+
+The installer is unsigned — if SmartScreen blocks it, pick **More info → Run anyway**.
 
 ### From source
 
@@ -70,7 +104,7 @@ npm run dist       # platform installer into release/
 npm run dist:dir   # unpacked dir for inspection
 ```
 
-Targets: Linux AppImage · macOS dmg · Windows NSIS (Deb available after a homepage/maintainer email is configured).
+Targets: Linux AppImage · macOS dmg (universal) · Windows NSIS. Every tagged release builds all three in CI — see [`.github/workflows/release.yml`](.github/workflows/release.yml) (Deb available after a homepage/maintainer email is configured).
 
 ## 🔒 Local-first by design
 
@@ -103,7 +137,3 @@ The parser skips corrupt lines and counts them as session warnings — one bad l
 ## 📄 License
 
 [MIT](LICENSE)
-
----
-
-中文版本：[README.zh-CN.md](README.zh-CN.md)

@@ -1,9 +1,10 @@
 # Pi Session Visualizer（中文版）
 
+🌐 [English](README.md) | **中文**
+
 **Pi 会话可视化器** —— 用时间线、关系图和洞察面板打开你运行过的每一个 pi 会话，数据原地只读，不上传、不复制、不改写。
 
 > [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
 pi 把每个会话写成纯文本 `.jsonl`——对机器友好，对人不够友好。Pi Session Visualizer 是一款本地优先的桌面应用（Electron + React + TypeScript），直接读取这些文件，将其转成：
 
 - 📜 **时间线** —— 用户消息、Pi 回复、思考块、工具调用与结果按序呈现，支持 Markdown、代码围栏与 Diff 渲染
@@ -31,13 +32,45 @@ pi 把每个会话写成纯文本 `.jsonl`——对机器友好，对人不够�
 
 ### 快速开始
 
+每个 [release](https://github.com/fenlyin0420/pi-session-visualizer/releases/latest) 都附带三平台安装包：
+
+| 平台 | 文件 |
+| --- | --- |
+| Linux | `Pi.Session.Visualizer-0.1.0.AppImage` |
+| macOS（universal，Intel + Apple Silicon 通用） | `Pi.Session.Visualizer-0.1.0-universal.dmg` |
+| Windows | `Pi.Session.Visualizer.Setup.0.1.0.exe` |
+
 **Linux（AppImage）**
 
 ```bash
 curl -Lo PiSessionVisualizer.AppImage \
   https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0.AppImage
+chmod +x PiSessionVisualizer.AppImage
 ./PiSessionVisualizer.AppImage
 ```
+
+**macOS（dmg）**
+
+```bash
+curl -Lo PiSessionVisualizer.dmg \
+  https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer-0.1.0-universal.dmg
+open PiSessionVisualizer.dmg
+```
+
+把 **Pi Session Visualizer** 拖进 `/Applications`。安装包未签名，首次打开需右键 →「打开」，或：
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/Pi Session Visualizer.app"
+```
+
+**Windows（NSIS）**
+
+```powershell
+Invoke-WebRequest -Uri https://github.com/fenlyin0420/pi-session-visualizer/releases/latest/download/Pi.Session.Visualizer.Setup.0.1.0.exe -OutFile PiSessionVisualizer-Setup.exe
+.\PiSessionVisualizer-Setup.exe
+```
+
+安装包未签名，SmartScreen 提示时选「更多信息 → 仍要运行」。
 
 **从源码运行**（需要 Node.js ≥ 22.12）
 
@@ -64,7 +97,7 @@ npm run dist       # 生成当前平台安装包（release/）
 npm run dist:dir   # 仅生成解包目录
 ```
 
-当前构建目标：Linux AppImage · macOS dmg · Windows NSIS（补充项目主页与维护者邮箱后可启用 Deb）。
+当前构建目标：Linux AppImage · macOS dmg（universal）· Windows NSIS；打 `v*` tag 后由 CI 一次性构建三平台，见 [.github/workflows/release.yml](.github/workflows/release.yml)（补充项目主页与维护者邮箱后可启用 Deb）。
 
 ### 本地优先
 
