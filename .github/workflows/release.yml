@@ -47,7 +47,7 @@ jobs:
         run: npm run test
 
       - name: Package ${{ matrix.platform }}
-        run: npm run dist -- ${{ matrix.args }}
+        run: npm run dist -- ${{ matrix.args }} --publish never
 
       - name: Upload installers
         uses: actions/upload-artifact@v4
