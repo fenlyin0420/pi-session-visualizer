@@ -5,6 +5,7 @@
 **Pi 会话可视化器** —— 用时间线、关系图和洞察面板打开你运行过的每一个 pi 会话，数据原地只读，不上传、不复制、不改写。
 
 > [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 pi 把每个会话写成纯文本 `.jsonl`——对机器友好，对人不够友好。Pi Session Visualizer 是一款本地优先的桌面应用（Electron + React + TypeScript），直接读取这些文件，将其转成：
 
 - 📜 **时间线** —— 用户消息、Pi 回复、思考块、工具调用与结果按序呈现，支持 Markdown、代码围栏与 Diff 渲染
