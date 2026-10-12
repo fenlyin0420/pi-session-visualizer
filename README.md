@@ -8,7 +8,6 @@
 [![Platform: Linux](https://img.shields.io/badge/Linux-AppImage-e10e0e.svg)](#quick-start)
 [![Platform: macOS](https://img.shields.io/badge/macOS-dmg-627ea5.svg)](#quick-start)
 [![Platform: Windows](https://img.shields.io/badge/Windows-NSIS-282c39.svg)](#quick-start)
-[![Local-first](https://img.shields.io/badge/Local-first-%E6%9C%A1%E6%9C%A1%E5%B9%B8-e74ce3.svg)](#local-first)
 
 pi writes each session as plain `.jsonl` — great for machines, hard for humans. Pi Session Visualizer is a local-first desktop app (Electron + React + TypeScript) that opens those files read-only and turns them into:
 
